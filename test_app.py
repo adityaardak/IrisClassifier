@@ -11,7 +11,7 @@ def client():
 def test_home_endpoint(client):
     response = client.get("/")  # Simulate a GET request to the home route
     assert response.status_code == 200  # Check if status is OK
-    assert b"Iris Classifier API is Running!" in response.data  # Check response content
+    assert b"Abhi hum Zinda hai!" in response.data  # Check response content
 
 def test_predict_endpoint_valid_input(client):
     response = client.post(
@@ -27,4 +27,5 @@ def test_predict_endpoint_invalid_input(client):
         json={"features": [5.1, 3.5, 1.4]}  # Invalid: only 3 features
     )
     assert response.status_code == 400  # Check if status is Bad Request
+
     assert "error" in response.json  # Check for error key in response
