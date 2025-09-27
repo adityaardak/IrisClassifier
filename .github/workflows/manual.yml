@@ -6,8 +6,6 @@ on:  # Triggers for the workflow
     branches: [ main ]  # Run on pushes to main branch
   pull_request:
     branches: [ main ]  # Run on pull requests to main
-  commit:
-    branches: [ main ]  # Run on Commit
  
 jobs:
   test:  # Job for running unit tests
